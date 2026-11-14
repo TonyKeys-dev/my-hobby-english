@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Hobby · English Grade 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+<link rel ="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+
+<section class="slide on" id="s0">
+  <div class="blob" style="width:520px;height:520px;background:#FFE08A;left:-160px;top:-180px"></div>
+  <div class="blob" style="width:420px;height:420px;background:#FF8FB8;right:-120px;bottom:-140px"></div>
+  <div class="tt">
+    <div class="row" id="r1"></div>
+    <div class="row" id="r2"></div>
+  </div>
+  <div class="sub">
+    <div class="st">English for Grade 3</div>
+    <button class="btn" onclick="go(1)">Let’s start ▶</button>
+  </div>
+</section>
+
+<section class="slide" id="s1">
+  <div class="blob" style="width:400px;height:400px;background:#9BDDFF;right:-120px;top:-150px"></div>
+  <div class="pill st">Hobbies</div>
+  <div class="pill2 st" id="say">Click a picture!</div>
+  <div class="area grid" id="grid"></div>
+</section>
+
+<section class="slide" id="sw" data-yt="N1o4oOXLOZc">
+  <div class="blob" style="width:400px;height:400px;background:#FFE08A;right:-120px;bottom:-140px"></div>
+  <div class="pill st">Watch and learn</div>
+  <div class="vf"><iframe title="Hobbies video" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <div class="side">
+    <div class="st"><ol><li>Watch the video.</li><li>Point to the hobby you hear.</li><li>Say: <b>I like swimming.</b></li></ol></div>
+  </div>
+</section>
+
+<section class="slide" id="s2">
+  <div class="blob" style="width:380px;height:380px;background:#8DF0C0;left:-100px;bottom:-140px"></div>
+  <div class="pill st">Let’s speak!</div>
+  <div class="av" style="left:60px;top:272px">🧑‍🏫</div>
+  <button class="bub st ask" id="ask">What’s your hobby?</button>
+  <button class="bub st ans" id="ans">My hobby is <b id="bl"></b></button>
+  <div class="av" style="left:760px;top:420px">🧒</div>
+  <div class="rule st">
+    <p><em>My hobby is</em> + verb-ing</p>
+    <p>My hobby is <b>swimming</b>.</p>
+    <p><em>I like</em> + verb-ing</p>
+    <p>I like <b>drawing</b>.</p>
+  </div>
+  <div class="go"><button class="btn" id="chg">🎲 Change hobby</button></div>
+</section>
+
+<section class="slide" id="s3" data-yt="90LfcLAjLiI">
+  <div class="blob" style="width:420px;height:420px;background:#A890FF;right:-120px;top:-160px"></div>
+  <div class="pill st">Sing along!</div>
+  <span class="note" style="left:640px;top:60px">🎵</span><span class="note" style="left:1090px;top:560px;animation-delay:1s">🎶</span><span class="note" style="left:60px;top:610px;animation-delay:2s">🎵</span>
+  <div class="vf"><iframe title="Hobby song" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <div class="side">
+    <button class="st song on" data-id="90LfcLAjLiI">The Hobbies Song<small>Fun Kids English</small></button>
+    <button class="st song" data-id="9ZQxr1I-cgw">What’s Your Hobby?<small>Sentence pattern song</small></button>
+    <button class="st song" data-id="Y-g1pJ0FUTY">Your hobby song<small>What do you like to do?</small></button>
+  </div>
+</section>
+
+<section class="slide" id="s4">
+  <div class="blob" style="width:380px;height:380px;background:#FFB3CF;left:-130px;bottom:-150px"></div>
+  <div class="pill st">Match it!</div>
+  <div class="pill2 st"><span id="score">0 / 6</span><button class="btn" id="again" style="font-size:24px;padding:6px 20px">↻ New</button></div>
+  <div class="area cards" id="cards"></div>
+</section>
+
+<section class="slide" id="s5">
+  <div class="blob" style="width:420px;height:420px;background:#FF9A8A;right:-130px;top:-150px"></div>
+  <div class="pill st">Your turn!</div>
+  <div class="big st"><div class="e" id="fe">🎲</div><div class="t" id="ft">What’s your hobby?</div><div class="n" id="fn">Say the sentence out loud.</div></div>
+  <div class="go"><button class="btn" id="spin">🎲 Pick a hobby</button></div>
+</section>
+
+<div id="nav"><button class="nb" id="prev" aria-label="Previous">‹</button><div id="dots"></div><button class="nb" id="next" aria-label="Next">›</button></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
