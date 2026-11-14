@@ -24,6 +24,7 @@ function go(n){n=Math.max(0,Math.min(S.length-1,n));cur=n;
   vids();
   $("#prev").style.visibility=n?"visible":"hidden";$("#next").style.visibility=n<S.length-1?"visible":"hidden"}
 $("#prev").onclick=function(){go(cur-1)};$("#next").onclick=function(){go(cur+1)};
+$("#resetbtn").onclick=function(){window.location.reload()};
 function updateFullscreenButton(){
   var active=!!document.fullscreenElement,b=$("#fsbtn");
   b.textContent=active?"⛶ Exit full screen":"⛶ Full screen";
