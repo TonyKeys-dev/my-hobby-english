@@ -16,10 +16,20 @@ function go(n){n=Math.max(0,Math.min(S.length-1,n));cur=n;
   vids();
   $("#prev").style.visibility=n?"visible":"hidden";$("#next").style.visibility=n<S.length-1?"visible":"hidden"}
 $("#prev").onclick=function(){go(cur-1)};$("#next").onclick=function(){go(cur+1)};
+function toggleFullscreen(){
+  var action=document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
+  action.catch(function(e){console.error("Could not change fullscreen mode:",e)}).then(updateFullscreenButton);
+}
+function updateFullscreenButton(){
+  var label=document.fullscreenElement?"Exit fullscreen":"Enter fullscreen";
+  $("#fullscreen").setAttribute("aria-label",label);$("#fullscreen").title=label;fit();
+}
+$("#fullscreen").onclick=toggleFullscreen;
+document.addEventListener("fullscreenchange",updateFullscreenButton);
 addEventListener("keydown",function(e){
   if(e.key==="ArrowRight"||e.key==="PageDown")go(cur+1);
   else if(e.key==="ArrowLeft"||e.key==="PageUp")go(cur-1);
-  else if(e.key==="f"||e.key==="F"){try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}catch(x){}}});
+  else if(e.key==="f"||e.key==="F")toggleFullscreen()});
 var tx=0;addEventListener("touchstart",function(e){tx=e.touches[0].clientX});
 addEventListener("touchend",function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>70)go(cur+(d<0?1:-1))});
 
