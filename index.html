@@ -38,21 +38,22 @@
   <div class="vf"><iframe title="Hobbies video" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
   <div class="side">
     <div class="st"><ol><li>Watch the video.</li><li>Point to the hobby you hear.</li><li>Say: <b>I like swimming.</b></li></ol></div>
+    <a class="yt ytw" target="_blank" rel="noopener">Open on YouTube</a>
   </div>
 </section>
 
 <section class="slide" id="s2">
   <div class="blob" style="width:380px;height:380px;background:#8DF0C0;left:-100px;bottom:-140px"></div>
   <div class="pill st">Let’s speak!</div>
-  <div class="av" style="left:60px;top:272px">🧑‍🏫</div>
+  <div class="av" style="left:30px;top:268px">🧑‍🏫</div>
   <button class="bub st ask" id="ask">What’s your hobby?</button>
   <button class="bub st ans" id="ans">My hobby is <b id="bl"></b></button>
-  <div class="av" style="left:760px;top:420px">🧒</div>
+  <div class="av" style="left:30px;top:500px">🧒</div>
   <div class="rule st">
     <p><em>My hobby is</em> + verb-ing</p>
     <p>My hobby is <b>swimming</b>.</p>
     <p><em>I like</em> + verb-ing</p>
-    <p>I like <b>drawing</b>.</p>
+    <p>I like <b>dancing</b>.</p>
   </div>
   <div class="go"><button class="btn" id="chg">🎲 Change hobby</button></div>
 </section>
@@ -66,24 +67,39 @@
     <button class="st song on" data-id="90LfcLAjLiI">The Hobbies Song<small>Fun Kids English</small></button>
     <button class="st song" data-id="9ZQxr1I-cgw">What’s Your Hobby?<small>Sentence pattern song</small></button>
     <button class="st song" data-id="Y-g1pJ0FUTY">Your hobby song<small>What do you like to do?</small></button>
+    <a class="yt" target="_blank" rel="noopener">Open on YouTube</a>
   </div>
 </section>
 
 <section class="slide" id="s4">
   <div class="blob" style="width:380px;height:380px;background:#FFB3CF;left:-130px;bottom:-150px"></div>
-  <div class="pill st">Match it!</div>
-  <div class="pill2 st"><span id="score">0 / 6</span><button class="btn" id="again" style="font-size:24px;padding:6px 20px">↻ New</button></div>
-  <div class="area cards" id="cards"></div>
+  <div class="pill st">Unscramble!</div>
+  <div class="pill2 st"><span id="us">1 / 5</span><button class="btn" id="ush" style="font-size:24px;padding:6px 20px">↻ Shuffle</button></div>
+  <div class="ue st" id="ue"></div>
+  <div class="uh" style="left:70px;top:480px;width:300px">Tap the letters in order.</div>
+  <div class="ua" id="uslots"></div>
+  <div class="ut" id="utiles"></div>
+  <button class="btn" id="unext" style="display:none;position:absolute;left:700px;top:566px">Next ▶</button>
+</section>
+
+<section class="slide" id="s6">
+  <div class="blob" style="width:400px;height:400px;background:#C6EBFF;right:-130px;bottom:-150px"></div>
+  <div class="pill st">Connect!</div>
+  <div class="pill2 st"><span id="cs">0 / 5</span><button class="btn" id="cnew" style="font-size:24px;padding:6px 20px">↻ New</button></div>
+  <div class="uh" style="left:450px;top:290px;width:380px">Drag a line from the picture to the word.</div>
+  <svg class="ropes" id="ropes" viewBox="0 0 1280 720"><line id="rope" stroke="#231942" stroke-width="8" stroke-linecap="round" style="display:none"/></svg>
 </section>
 
 <section class="slide" id="s5">
   <div class="blob" style="width:420px;height:420px;background:#FF9A8A;right:-130px;top:-150px"></div>
   <div class="pill st">Your turn!</div>
-  <div class="big st"><div class="e" id="fe">🎲</div><div class="t" id="ft">What’s your hobby?</div><div class="n" id="fn">Say the sentence out loud.</div></div>
-  <div class="go"><button class="btn" id="spin">🎲 Pick a hobby</button></div>
+  <div class="pill2 st" id="pickmsg">Say: My hobby is …</div>
+  <div class="qq st">What’s your hobby?</div>
+  <div class="qgrid" id="qgrid"></div>
 </section>
 
-<div id="nav"><button class="nb" id="prev" aria-label="Previous">‹</button><div id="dots"></div><button class="nb" id="fullscreen" aria-label="Enter fullscreen" title="Enter fullscreen">⛶</button><button class="nb" id="next" aria-label="Next">›</button></div>
+<button id="vbtn" title="Change voice">🔊 Voice</button>
+<div id="nav"><button class="nb" id="prev" aria-label="Previous">‹</button><div id="dots"></div><button class="nb" id="next" aria-label="Next">›</button></div>
 </div>
 
 <script src="script.js"></script>
