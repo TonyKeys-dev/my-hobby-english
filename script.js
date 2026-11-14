@@ -123,6 +123,21 @@ document.addEventListener("pointerup",function(e){if(!drag)return;var d=drag;dra
   else{ding(false);[d,t].forEach(function(x){x.classList.add("bad");setTimeout(function(){x.classList.remove("bad")},450)})}});
 $("#cnew").onclick=cLoad;cLoad();
 
+/* guess the photo */
+var Q={},EXT=["jpg","jpeg","png","webp"];
+function qImg(h){var im=$("#qimg"),fb=$("#qfb"),i=0,sl=h[1].replace(/ /g,"-");
+  fb.textContent=h[0];fb.style.display="none";im.style.display="block";
+  im.onerror=function(){i++;if(i<EXT.length)im.src="images/"+sl+"."+EXT[i];else{im.style.display="none";fb.style.display="flex"}};
+  im.src="images/"+sl+"."+EXT[0]}
+function qStart(){Q.order=shuffle(H.slice());Q.i=0;qLoad()}
+function qLoad(){var h=Q.order[Q.i];Q.h=h;Q.lock=false;$("#qs").textContent=(Q.i+1)+" / "+H.length;$("#qnext").style.display="none";qImg(h);
+  var opts=shuffle(shuffle(H.filter(function(x){return x!==h})).slice(0,3).concat([h])),box=$("#qopts");box.innerHTML="";
+  opts.forEach(function(o){var b=document.createElement("button");b.className="st qo";b.textContent=o[1];b.onclick=function(){qPick(b,o)};box.appendChild(b)})}
+function qPick(b,o){if(Q.lock||b.classList.contains("bad"))return;
+  if(o===Q.h){Q.lock=true;b.classList.add("ok");ding(true);say(o[1]);var last=Q.i>=H.length-1,n=$("#qnext");n.style.display="";n.textContent=last?"↻ Play again":"Next ▶";if(last)conf()}
+  else{b.classList.add("bad");ding(false)}}
+$("#qnext").onclick=function(){if(Q.i>=H.length-1)qStart();else{Q.i++;qLoad()}};
+$("#qnew").onclick=qStart;qStart();
 
 /* finish: choose your hobby */
 H.forEach(function(h,i){var b=document.createElement("button");b.className="st qc";b.style.background=COL[i];

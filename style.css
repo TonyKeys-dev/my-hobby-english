@@ -77,6 +77,16 @@ button:focus-visible{outline:4px solid #fff;outline-offset:3px}
 .cn.ok{background:#B8F2D6;cursor:default}.cn.bad{animation:sh .4s;background:#FFC0B5}
 .ropes{position:absolute;inset:0;width:1280px;height:720px;pointer-events:none;z-index:3}
 
+/* guess the photo */
+#s7{background:#FFD36B}
+.ph{position:absolute;left:56px;top:130px;width:560px;height:430px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+#qfb{display:none;font-size:230px;align-items:center;justify-content:center;width:100%;height:100%}
+.qopts{position:absolute;left:660px;right:56px;top:130px;display:flex;flex-direction:column;gap:16px}
+.qo{height:96px;font-size:38px;font-weight:700;color:var(--ink);text-align:center}
+.qo:hover{transform:translateY(-2px)}
+.qo.ok{background:#B8F2D6}.qo.bad{background:#FFC0B5;animation:sh .4s;opacity:.7}
+
 /* finish: question */
 .qq{position:absolute;left:56px;right:56px;top:126px;padding:14px 20px;text-align:center;font-size:70px;font-weight:700;border-radius:36px}
 .qgrid{position:absolute;left:56px;right:56px;top:290px;bottom:104px;display:flex;gap:18px}
