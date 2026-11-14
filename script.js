@@ -24,10 +24,22 @@ function go(n){n=Math.max(0,Math.min(S.length-1,n));cur=n;
   vids();
   $("#prev").style.visibility=n?"visible":"hidden";$("#next").style.visibility=n<S.length-1?"visible":"hidden"}
 $("#prev").onclick=function(){go(cur-1)};$("#next").onclick=function(){go(cur+1)};
+function updateFullscreenButton(){
+  var active=!!document.fullscreenElement,b=$("#fsbtn");
+  b.textContent=active?"⛶ Exit full screen":"⛶ Full screen";
+  b.title=active?"Exit full screen":"Enter full screen";
+  fit()
+}
+function toggleFullscreen(){
+  var action=document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
+  if(action&&action.catch)action.catch(function(){$("#fsbtn").title="Full screen is unavailable in this browser."})
+}
+$("#fsbtn").onclick=toggleFullscreen;
+document.addEventListener("fullscreenchange",updateFullscreenButton);
 addEventListener("keydown",function(e){
   if(e.key==="ArrowRight"||e.key==="PageDown")go(cur+1);
   else if(e.key==="ArrowLeft"||e.key==="PageUp")go(cur-1);
-  else if(e.key==="f"||e.key==="F"){try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}catch(x){}}});
+  else if(e.key==="f"||e.key==="F")toggleFullscreen()});
 var tx=0;addEventListener("touchstart",function(e){tx=e.touches[0].clientX});
 addEventListener("touchend",function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>70)go(cur+(d<0?1:-1))});
 
@@ -60,7 +72,7 @@ $("#ans").onclick=function(){say("My hobby is "+H[bi%H.length][1]+".")};
 
 /* video (YouTube embeds) */
 var YT="https://www.youtube-nocookie.com/embed/";
-function loadVid(s,id){s.querySelector("iframe").src=YT+id+"?rel=0&modestbranding=1&playsinline=1";s.querySelector(".yt").href="https://www.youtube.com/watch?v="+id;s.dataset.cur=id}
+function loadVid(s,id){s.querySelector("iframe").src=YT+id+"?rel=0&modestbranding=1&playsinline=1";s.dataset.cur=id}
 function vids(){S.forEach(function(s){var f=s.querySelector("iframe");if(!f)return;
   if(s.classList.contains("on")){if(!f.getAttribute("src"))loadVid(s,s.dataset.cur||s.dataset.yt)}else f.removeAttribute("src")})}
 document.querySelectorAll(".song").forEach(function(b){b.onclick=function(){
