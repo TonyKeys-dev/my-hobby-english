@@ -149,4 +149,5 @@ H.forEach(function(h,i){var b=document.createElement("button");b.className="st q
 $("#vbtn").onclick=function(){if(!voices.length){say("My hobby is swimming.");return}
   vx=(vx+1)%(voices.length+1);VO=voices[vx]||null;vlab();say("My hobby is swimming.")};
 pickVoices();
+["contextmenu","selectstart","dragstart"].forEach(function(n){document.addEventListener(n,function(e){e.preventDefault()})});
 go(0);
