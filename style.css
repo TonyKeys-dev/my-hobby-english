@@ -1,5 +1,5 @@
 :root{--ink:#231942;--sun:#FFC83D;--coral:#FF6B57;--sky:#4CC3FF;--mint:#3DDC97;--grape:#8A6BFF;--pink:#FF8FB8}
-*{box-sizing:border-box;margin:0}
+*{box-sizing:border-box;margin:0;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:#1b1233;overflow:hidden;font-family:"Fredoka","Trebuchet MS","Comic Sans MS",sans-serif;color:var(--ink);font-weight:500}
 button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 button:focus-visible{outline:4px solid #fff;outline-offset:3px}
